@@ -1,4 +1,7 @@
 .PHONY: run
 
 run:
-	@sbt hello "hello2 hoge"
+	@sbt hi "hi2 hoge" "hello hoge fuga"
+
+build:
+	@sbt publishLocal

@@ -1,0 +1,1 @@
+addSbtPlugin("com.github.sioncojp" % "sbt-hello" % "1.0.0")

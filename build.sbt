@@ -1,23 +1,24 @@
 lazy val root = (project in file("."))
   .settings(
-    scalaVersion := "2.12.5",
-    name := "hello-world"
+    organization := "com.github.sioncojp",
+    version := "1.0.0",
+    name := "sbt-hello",
+    sbtPlugin := true
   )
 
-val hello = taskKey[Unit]("hello world")
+val hi = taskKey[Unit]("hi world")
 
-hello := {
-  println("hello world")
+hi := {
+  println("hi world")
 }
 
 // Keyの定義
 // 引数を使うときはinputKey
-// sbt "hello2 hoge"
-val hello2 = inputKey[Unit]("hello world")
+// sbt "hi2 hoge"
+val hi2 = inputKey[Unit]("hi world")
 
-// helloの実装
-hello2 := {
+hi2 := {
   val args: Seq[String] = complete.DefaultParsers.spaceDelimited("<arg>").parsed
   println("args.size=" + args.size)
-  println(s"hello ${args.head}!!")
+  println(s"hi ${args.head}!!")
 }
